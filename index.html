@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ひらがな</title>
+</head>
+<body>
+<div class="app">
+    <header class="app-header">
+        <div class="brand">
+            <h1>ひらがなげんご</h1>
+            <p>ひらがなだけでかける ぷろぐらみんぐげんご</p>
+        </div>
+        <button id="run" type="button" class="run-button">
+            <span class="run-icon">▶</span>
+            じっこう
+        </button>
+    </header>
+
+    <main class="layout">
+        <section class="pane pane-editor">
+            <div class="pane-header">
+                <span class="pane-title">ぷろぐらむ</span>
+            </div>
+            <textarea id="editor" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+        </section>
+
+        <section class="pane pane-console">
+            <div class="pane-header">
+                <span class="pane-title">こんそーる</span>
+                <span id="status" class="hint"></span>
+            </div>
+            <div id="console" class="console">
+                <div class="placeholder">じっこうをおすと、けっかがでるよ</div>
+            </div>
+        </section>
+
+        <aside class="pane pane-reference">
+            <div class="pane-header">
+                <span class="pane-title">つかいかた</span>
+                <span class="hint">れいをおすと ぷろぐらむにはいるよ</span>
+            </div>
+            <div class="reference">
+                <h2>ことば</h2>
+                <dl>
+                    <dt>へんすう</dt>
+                    <dd><code data-snippet="「かず」">「かず」</code> 「」でかこむ</dd>
+                    <dt>もじ</dt>
+                    <dd><code data-snippet='"こんにちは"'>"こんにちは"</code> "" でかこむ</dd>
+                    <dt>かず</dt>
+                    <dd><code>10</code> <code>1.5</code></dd>
+                    <dt>ほんとう・うそ</dt>
+                    <dd>「もし」のじょうけんになるこたえ<br>
+                        <code data-snippet="みせる 5 おおきい 3 。">5 おおきい 3</code> → ほんとう<br>
+                        <code data-snippet="みせる 5 ひとしい 3 。">5 ひとしい 3</code> → うそ</dd>
+                    <dt>なし</dt>
+                    <dd>なにもはいっていない、ということ<br>
+                        <code data-snippet="「なまえ」 は なし 。">「なまえ」 は なし 。</code></dd>
+                    <dt>めも</dt>
+                    <dd><code data-snippet="めも ここはよまれない">めも ここはよまれない</code></dd>
+                    <dt>ぶんのおわり</dt>
+                    <dd><code>。</code> をつける</dd>
+                </dl>
+
+                <h2>ぶん</h2>
+                <dl>
+                    <dt>だいにゅう</dt>
+                    <dd><pre data-snippet="「かず」 は 10 。">「かず」 は 10 。</pre></dd>
+                    <dt>みせる</dt>
+                    <dd><pre data-snippet="みせる 「かず」 。">みせる 「かず」 。</pre></dd>
+                    <dt>もし</dt>
+                    <dd><pre data-snippet="もし 「かず」 おおきい 5 ここから
+  みせる &quot;おおきい&quot; 。
+ここまで
+それとも 「かず」 ひとしい 5 ここから
+  みせる &quot;おなじ&quot; 。
+ここまで
+ちがえば ここから
+  みせる &quot;ちいさい&quot; 。
+ここまで">もし 「かず」 おおきい 5 ここから
+  みせる "おおきい" 。
+ここまで
+それとも 「かず」 ひとしい 5 ここから
+  みせる "おなじ" 。
+ここまで
+ちがえば ここから
+  みせる "ちいさい" 。
+ここまで</pre></dd>
+                    <dt>くりかえし</dt>
+                    <dd><pre data-snippet="くりかえし 「ばんごう」 を 0 から 5 ここから
+  みせる 「ばんごう」 。
+ここまで">くりかえし 「ばんごう」 を 0 から 5 ここから
+  みせる 「ばんごう」 。
+ここまで</pre> 0 から 4 まで（5 はふくまない）</dd>
+                    <dt>あいだ</dt>
+                    <dd><pre data-snippet="あいだ 「ばんごう」 ちいさい 5 ここから
+  「ばんごう」 は 「ばんごう」 たす 1 。
+ここまで">あいだ 「ばんごう」 ちいさい 5 ここから
+  「ばんごう」 は 「ばんごう」 たす 1 。
+ここまで</pre> じょうけんが ほんとう のあいだ くりかえす</dd>
+                </dl>
+
+                <h2>けいさん</h2>
+                <table>
+                    <tr><th>たす</th><td>+</td><th>ひとしい</th><td>==</td></tr>
+                    <tr><th>ひく</th><td>−</td><th>ちいさい</th><td>&lt;</td></tr>
+                    <tr><th>かける</th><td>×</td><th>おおきい</th><td>&gt;</td></tr>
+                    <tr><th>わる</th><td>÷</td><th>いか</th><td>&lt;=</td></tr>
+                    <tr><th>あまり</th><td>%</td><th>いじょう</th><td>&gt;=</td></tr>
+                    <tr><th>かつ</th><td>and</td><th>または</th><td>or</td></tr>
+                </table>
+                <p class="note">さきにけいさんしたいところは <code>（ ）</code> でかこむ</p>
+            </div>
+        </aside>
+    </main>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
