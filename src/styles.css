@@ -222,6 +222,24 @@ body {
     line-height: 1.6;
 }
 
+.reference .repo-link {
+    margin: 0.75rem 0 0;
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    background-color: #f3f5f8;
+    color: var(--muted);
+}
+
+.reference .repo-link a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.reference .repo-link a:hover {
+    text-decoration: underline;
+}
+
 .reference h2 {
     font-size: 0.75rem;
     font-weight: 600;
