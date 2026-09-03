@@ -126,7 +126,7 @@ export default function Interpreter(program: string, stdOut: (text: string) => v
 
         variables[statement.variable] = start;
 
-        for (let i = start; i < end; i++) {
+        for (let i = start; i <= end; i++) {
             interpret(statement.body);
             (variables[statement.variable] as number)++;
         }
